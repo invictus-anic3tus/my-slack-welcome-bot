@@ -3,7 +3,6 @@ import { App } from '@slack/bolt';
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
   appToken: process.env.SLACK_APP_TOKEN,
-  socketMode: true,
 });
 
 app.event('member_joined_channel', async ({ event, client, say }) => {
@@ -44,6 +43,6 @@ app.event('member_joined_channel', async ({ event, client, say }) => {
 
 (async () => {
   await app.start(process.env.PORT || 3000);
-  console.log('⚡️ Bolt app is running!');
+  console.log('Running on port', process.env.PORT || 3000);
 })();
 
