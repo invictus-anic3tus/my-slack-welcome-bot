@@ -43,7 +43,7 @@ app.event('member_joined_channel', async ({ event, client, say }) => {
 });
 
 (async () => {
-  await app.start();
+  await app.start(process.env.PORT || 3000);
   console.log('⚡️ Bolt app is running!');
 })();
 
